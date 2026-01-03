@@ -1,0 +1,221 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   NAVBAR BASE (Before Scroll - Transparent)
+===================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 90px;
+  padding: 0 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: transparent;
+  z-index: 9999;
+  
+  transition: all 0.3s ease;
+}
+
+/* =====================================================
+   NAVBAR AFTER SCROLL (White Background)
+===================================================== */
+.navbar.scrolled {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =====================================================
+   BRAND LOGO
+===================================================== */
+.brand {
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.navbar.scrolled .brand {
+  color: #000000;
+}
+
+/* =====================================================
+   NAVIGATION MENU
+===================================================== */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.menu a {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+/* Menu color after scroll */
+.navbar.scrolled .menu a {
+  color: #000000;
+}
+
+/* Active state - GOLD color (before and after scroll) */
+.menu a.active {
+  color: #caa55c !important;
+}
+
+/* Hover state */
+.menu a:hover {
+  color: #caa55c;
+}
+
+/* =====================================================
+   BUTTONS CONTAINER
+===================================================== */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* =====================================================
+   BUTTONS BASE STYLE (Before Scroll - Transparent)
+===================================================== */
+.call-btn,
+.enquire-btn {
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  
+  cursor: pointer;
+  outline: none;
+  
+  transition: all 0.3s ease;
+}
+
+/* =====================================================
+   BUTTONS AFTER SCROLL (Gold Background)
+===================================================== */
+.navbar.scrolled .call-btn,
+.navbar.scrolled .enquire-btn {
+  background: #c9a05c;
+  border-color: #c9a05c;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+/* =====================================================
+   BUTTONS HOVER (Before Scroll)
+===================================================== */
+.call-btn:hover,
+.enquire-btn:hover {
+  background: #caa55c;
+  border-color: #caa55c;
+  color: #000000;
+}
+
+/* BUTTONS HOVER (After Scroll - Darker Gold) */
+.navbar.scrolled .call-btn:hover,
+.navbar.scrolled .enquire-btn:hover {
+  background: #b8944d;
+  border-color: #b8944d;
+  color: #ffffff;
+}
+
+/* =====================================================
+   BUTTONS ACTIVE/CLICK
+===================================================== */
+.call-btn:active,
+.enquire-btn:active {
+  background: #b8944d;
+  border-color: #b8944d;
+  color: #000000;
+  transform: scale(0.97);
+}
+
+.navbar.scrolled .call-btn:active,
+.navbar.scrolled .enquire-btn:active {
+  background: #a67f42;
+  border-color: #a67f42;
+  color: #ffffff;
+  transform: scale(0.97);
+}
+
+/* =====================================================
+   BUTTONS FOCUS (Keyboard Navigation)
+===================================================== */
+.call-btn:focus-visible,
+.enquire-btn:focus-visible {
+  outline: 2px solid #caa55c;
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 0 40px;
+  }
+  
+  .menu {
+    gap: 24px;
+  }
+  
+  .menu a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .menu {
+    display: none;
+  }
+  
+  .navbar {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0 20px;
+    height: 70px;
+  }
+  
+  .brand {
+    font-size: 20px;
+  }
+  
+  .actions {
+    gap: 10px;
+  }
+  
+  .call-btn,
+  .enquire-btn {
+    padding: 10px 16px;
+    font-size: 11px;
+  }
+}
